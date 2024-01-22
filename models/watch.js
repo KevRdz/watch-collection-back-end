@@ -9,7 +9,7 @@ const watchSchema = new Schema ({
   functionality: {type: String, required: true},
   features: {type: String, required: false},
   owner: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"},
-}. {
+}, {
   timestamps: true
 })
 
