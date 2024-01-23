@@ -1,4 +1,4 @@
-import { Watch } from "../models/watch";
+import { Watch } from "../models/watch.js";
 
 function create(req, res) {
   req.body.owner = req.user.profile
