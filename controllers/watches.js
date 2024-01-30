@@ -28,7 +28,26 @@ function index(req, res) {
   })
 }
 
+function deleteOne(req, res) {
+  Watch.findById(req.params.id)
+  .then(watch => {
+    if (watch.owner._id.equals(req.user.profile)) {
+      Watch.findByIdAndDelete(watch._id)
+      .then(deletedWatch => {
+        res.json(deletedWatch)
+      })
+    } else {
+      res.status(401).json({err: "Not authorized"})
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({err: err.errmsg})
+  })
+}
+
 export{
   create,
   index,
+  deleteOne as delete,
 }

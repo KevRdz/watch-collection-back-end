@@ -9,6 +9,7 @@ router.get('/', watchesCtrl.index)
 //Protected Routes
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, watchesCtrl.create)
+router.delete('/:id', checkAuth, watchesCtrl.delete)
 
 export {
   router
