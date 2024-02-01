@@ -10,6 +10,7 @@ router.get('/', watchesCtrl.index)
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, watchesCtrl.create)
 router.delete('/:id', checkAuth, watchesCtrl.delete)
+router.put('/:id', checkAuth, watchesCtrl.update)
 
 export {
   router
