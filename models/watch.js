@@ -8,6 +8,7 @@ const watchSchema = new Schema ({
   movement: {type: String, required: true},
   functionality: {type: String, required: true},
   features: {type: String, required: false},
+  photo: {type: String},
   owner: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"},
 }, {
   timestamps: true
